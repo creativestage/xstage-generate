@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body {
+          margin: 0;
+          font-size: 0.16rem;
+        }
+    </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    !function(a){function b(){a.rem=f.getBoundingClientRect().width/16,f.style.fontSize=a.rem+"px"}var c,d=a.navigator.appVersion.match(/iphone/gi)?a.devicePixelRatio:1,e=1/d,f=document.documentElement,g=document.createElement("meta");if(a.dpr=d,a.addEventListener("resize",function(){clearTimeout(c),c=setTimeout(b,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(c),c=setTimeout(b,300))},!1),f.setAttribute("data-dpr",d),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+e+", maximum-scale="+e+", minimum-scale="+e+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var h=document.createElement("div");h.appendChild(g),document.write(h.innerHTML)}b()}(window);
+  </script>
+  <script>
+    ;class Compiler {
+      constructor(options) {
+        const {id, config} = options;
+        this.el = '#' + id;
+        this.config = config;
+      }
+      require(jsSrc) {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = jsSrc;
+          document.getElementsByTagName('head')[0].appendChild(script);
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+      }
+    }
+    window.Compiler = Compiler;
+  </script>
+</body>
+</html>

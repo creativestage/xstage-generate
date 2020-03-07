@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>你好页面</title><style>body{margin:0;font-size:.16rem}</style><style>.a .b{width:.04266667rem}</style><style>.a .b{width:200px}</style></head><body><div id="app"><div id="module-f12" v-cloak><div><span>{{msg}}</span></div></div><div id="module-f6666" v-cloak><div><span>{{msg}}</span></div></div></div><script src="https://cdn.jsdelivr.net/npm/vue"></script><script>!function(e){function t(){e.rem=m.getBoundingClientRect().width/16,m.style.fontSize=e.rem+"px"}var i,n=e.navigator.appVersion.match(/iphone/gi)?e.devicePixelRatio:1,a=1/n,m=document.documentElement,r=document.createElement("meta");if(e.dpr=n,e.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(t,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(t,300))},!1),m.setAttribute("data-dpr",n),r.setAttribute("name","viewport"),r.setAttribute("content","initial-scale="+a+", maximum-scale="+a+", minimum-scale="+a+", user-scalable=no"),m.firstElementChild)m.firstElementChild.appendChild(r);else{var d=document.createElement("div");d.appendChild(r),document.write(d.innerHTML)}t()}(window)</script><script>;class Compiler {
+      constructor(options) {
+        const {id, config} = options;
+        this.el = '#' + id;
+        this.config = config;
+      }
+      require(jsSrc) {
+        return new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = jsSrc;
+          document.getElementsByTagName('head')[0].appendChild(script);
+          script.onload = resolve;
+          script.onerror = reject;
+        });
+      }
+    }
+    window.Compiler = Compiler;</script><script>try {
+          ;new Function(`$this=this,new Vue({data:{msg:this.config.msg},mounted(){console.log(this.msg),$this.require("https://cdn.bootcss.com/jquery/3.4.1/jquery.js").then(()=>{console.log($)}),setTimeout(()=>{this.msg=444},1e3)}}).$mount(this.el);`).call(new Compiler({id:'module-f12', config: {"msg":12}}))
+        } catch(e) {
+          console.erro(e)
+        }</script><script>try {
+          ;new Function(`new Vue({data:{msg:this.config.msg},mounted(){console.log(this.msg),setTimeout(()=>{this.msg="888"},1e3)}}).$mount(this.el);`).call(new Compiler({id:'module-f6666', config: {"msg":"xu"}}))
+        } catch(e) {
+          console.erro(e)
+        }</script></body></html>
