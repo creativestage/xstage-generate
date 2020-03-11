@@ -1,6 +1,6 @@
 {
   "name": "xstage-generate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/creativestage/xstage-generate.git"
@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "xujiazheng",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "html-minifier": "^4.0.0",
     "uglify-es": "^3.3.9"
