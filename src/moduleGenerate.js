@@ -8,7 +8,7 @@ class ModuleGenerate {
   async init() {
     const {id, html, css, js, config} = this.options;
     this.config = config;
-    this.id = 'module-' + id;
+    this.id = id;
     this.template = this.wrapTemplate(html);
     
     this.script = this.getScript(js);
@@ -38,7 +38,7 @@ class ModuleGenerate {
         try {
           ;new Function(\`${uyjs.code}\`).call(new Compiler({id:\'${this.id}\', config: ${this.config}}))
         } catch(e) {
-          console.erro(e)
+          console.error(e)
         }
       </script>
     `;

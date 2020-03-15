@@ -1,12 +1,12 @@
 {
   "name": "xstage-generate",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "repository": {
     "type": "git",
     "url": "https://github.com/creativestage/xstage-generate.git"
   },
   "description": "模块生成页面",
-  "main": "./src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "html-minifier": "^4.0.0",
+    "less": "^3.11.1",
     "uglify-es": "^3.3.9"
   }
 }
