@@ -6,7 +6,7 @@ class ModuleGenerate {
     this.options = moduleOptions;
   }
   async init() {
-    const {id, html, css, js, config} = this.options;
+    const {id, html, css, js, config = {}} = this.options;
     this.config = config;
     this.id = id;
     this.template = this.wrapTemplate(html);
