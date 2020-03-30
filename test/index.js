@@ -21,13 +21,19 @@ renderPageHtml('你好页面', [
         setTimeout(() => {
           this.msg = 444;
         }, 1000)
+        $this.Event.on('myevent', (a, b) => {
+          this.msg = a + b;
+        });
+      },
+      methods: {
+        
       }
     }).$mount(this.el)
   `
   },
   {
     id: 'f6666',
-  html: '<div><span>{{msg}}</span></div>',
+  html: '<div @click="onClick"><span>{{msg}}</span></div>',
   css: '.a {.b {width: 200px}}',
   config: JSON.stringify({
     msg: 'xu'
@@ -40,6 +46,12 @@ renderPageHtml('你好页面', [
         setTimeout(() => {
           this.msg = '888';
         }, 1000)
+      },
+      methods: {
+        onClick() {
+          console.log($this.Event)
+          $this.Event.emit('myevent', 1, 9)
+        }
       }
     }).$mount(this.el)
   `
