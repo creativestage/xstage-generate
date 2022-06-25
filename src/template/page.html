@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,47 +15,10 @@
 </head>
 <body>
   <div id="app"></div>
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
     !function(a){function b(){a.rem=f.getBoundingClientRect().width/16,f.style.fontSize=a.rem+"px"}var c,d=a.navigator.appVersion.match(/iphone/gi)?a.devicePixelRatio:1,e=1/d,f=document.documentElement,g=document.createElement("meta");if(a.dpr=d,a.addEventListener("resize",function(){clearTimeout(c),c=setTimeout(b,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(c),c=setTimeout(b,300))},!1),f.setAttribute("data-dpr",d),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+e+", maximum-scale="+e+", minimum-scale="+e+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var h=document.createElement("div");h.appendChild(g),document.write(h.innerHTML)}b()}(window);
   </script>
-  <script>
-    ;class EventEmitter {
-      constructor() {
-        this.cacheEmitter = {};
-      }
-      on(eventName, cb) {
-        const handles = this.cacheEmitter[eventName] || [];
-        handles.push(cb);
-        this.cacheEmitter[eventName] = handles;
-      }
-      emit(eventName, ...argv) {
-        const handles = this.cacheEmitter[eventName] || [];
-        handles.forEach(handler => {
-          handler(...argv);
-        });
-      }
-    }
-    window.CWEvent = new EventEmitter();
-    ;class Compiler {
-      constructor(options) {
-        const {id, config} = options;
-        this.el = '#' + id;
-        this.config = config;
-        this.Event = window.CWEvent;
-      }
-      require(jsSrc) {
-        return new Promise((resolve, reject) => {
-          const script = document.createElement("script");
-          script.type = "text/javascript";
-          script.src = jsSrc;
-          document.getElementsByTagName('head')[0].appendChild(script);
-          script.onload = resolve;
-          script.onerror = reject;
-        });
-      }
-    }
-    window.Compiler = Compiler;
-  </script>
-</body>
-</html>
+  <script id="js-build">"use strict";function _classCallCheck(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function _defineProperties(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function _createClass(e,t,n){return t&&_defineProperties(e.prototype,t),n&&_defineProperties(e,n),Object.defineProperty(e,"prototype",{writable:!1}),e}var EventEmitter=function(){function e(){_classCallCheck(this,e),this.cacheEmitter={}}return _createClass(e,[{key:"on",value:function(e,t){var n=this.cacheEmitter[e]||[];n.push(t),this.cacheEmitter[e]=n}},{key:"emit",value:function(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];(this.cacheEmitter[e]||[]).forEach(function(e){e.apply(void 0,n)})}}]),e}();window.CWEvent=new EventEmitter;var Compiler=function(){function e(t){_classCallCheck(this,e);var n=t.id,r=t.config;this.el="#"+n,this.config=r,this.Event=window.CWEvent}return _createClass(e,[{key:"require",value:function(e){return new Promise(function(t,n){var r=document.createElement("script");r.type="text/javascript",r.src=e,document.getElementsByTagName("head")[0].appendChild(r),r.onload=t,r.onerror=n})}}]),e}();window.Compiler=Compiler;</script>
+
+</body></html>
